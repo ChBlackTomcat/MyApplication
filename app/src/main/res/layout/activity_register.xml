@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+   >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/Base.Theme.AppCompat.Light"
+        android:layout_below="@+id/register_account"
+        android:layout_alignLeft="@+id/register_account"
+        android:layout_alignStart="@+id/register_account">
+        <Button
+            android:onClick="back"
+            android:id="@+id/register_bt_back"
+            android:background="@drawable/goback"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <TextView
+            android:text="请填写用户信息"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<TextView
+    android:id="@+id/text_account"
+    android:layout_marginTop="10dp"
+    android:text="账号:"
+    android:textSize="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+
+    <EditText
+        android:hint="请输入账号"
+        android:background="@drawable/edit_bg"
+        android:id="@+id/register_account"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/text_account"
+        android:layout_toRightOf="@+id/text_account"
+        android:layout_toEndOf="@+id/text_account"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
+        <TextView
+            android:layout_below="@id/register_account"
+            android:layout_marginTop="10dp"
+            android:text="密码:"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3" />
+
+        <EditText
+            android:hint="请输入密码，不少于8位数"
+            android:password="true"
+            android:background="@drawable/edit_bg"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView3"
+            android:layout_alignLeft="@+id/register_account"
+            android:layout_alignStart="@+id/register_account"
+            android:id="@+id/register_ed_password" />
+        <TextView
+            android:text="确认密码:"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/register_ed_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4" />
+
+        <EditText
+            android:hint="请确认密码"
+            android:password="true"
+            android:background="@drawable/edit_bg"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textView4"
+            android:layout_toRightOf="@+id/textView4"
+            android:layout_toEndOf="@+id/textView4"
+            android:id="@+id/register_ed_rePassword" />
+        <TextView
+            android:layout_below="@id/register_ed_rePassword"
+            android:textSize="20dp"
+            android:text="用户名:"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView5" />
+
+        <EditText
+            android:hint="请输入用户名"
+            android:background="@drawable/edit_bg"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView5"
+            android:layout_alignRight="@+id/register_ed_rePassword"
+            android:layout_alignEnd="@+id/register_ed_rePassword"
+            android:id="@+id/register_ed_username" />
+        <TextView
+            android:textSize="20dp"
+            android:layout_below="@id/register_ed_username"
+            android:text="省份:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <RadioGroup
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/register_ed_username"
+            android:id="@+id/register_rd_province"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/rd_guangdon"
+            android:text="广东"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+            <RadioButton
+                android:text="河南"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rd_heNan" />
+
+            <RadioButton
+                android:text="湖北"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rd_huBei" />
+
+            <RadioButton
+                android:text="广西"
+                android:id="@+id/rd_guangXi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+    <Button
+        android:text="确定"
+        android:textSize="20dp"
+        android:id="@+id/register_bt_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

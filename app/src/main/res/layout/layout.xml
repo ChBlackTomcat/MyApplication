@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/title"
+        android:text="请选择登录方式"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+       android:background="@drawable/edit_bg"
+        android:id="@+id/account"
+        android:layout_below="@id/title"
+        android:hint="请输入账号"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <EditText
+        android:background="@drawable/edit_bg"
+        android:id="@+id/password"
+        android:layout_below="@id/account"
+        android:hint="请输入密码"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:text="商户登录"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Login_user"
+        android:layout_alignLeft="@+id/Login_user"
+        android:layout_alignStart="@+id/Login_user"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:text="用户登录"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:layout_below="@+id/Login_manager"
+        android:layout_alignLeft="@+id/Login_manager"
+        android:layout_alignStart="@+id/Login_manager" />
+
+    <ImageButton
+        android:id="@+id/Login_user"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/login_user"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_below="@+id/password"
+        android:layout_alignRight="@+id/title"
+        android:layout_alignEnd="@+id/title"
+        android:layout_marginTop="67dp" />
+
+    <Button
+        android:background="@color/coloeGreen"
+        android:text="注册"
+        android:textSize="30dp"
+        android:textColor="@color/colorWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/register" />
+
+    <ImageButton
+        android:background="@drawable/login_manager"
+        android:id="@+id/Login_manager"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_alignTop="@+id/Login_user"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignStart="@+id/title" />
+
+</RelativeLayout>
