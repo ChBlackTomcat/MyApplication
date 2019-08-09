@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyApplication</string>
+    <string name="httpUrl">"http://192.168.88.1:8080/AppBackground/RegServlet"</string>
+    <string name="sql">"create table user(_id integer primary key autoincrement,username varchar(20),account varchar(20),password varchar(20),province varchar(20))"</string>
+</resources>
