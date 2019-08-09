@@ -112,6 +112,7 @@ public class LoginActivity extends Activity implements View.OnClickListener{
                                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                     intent.putExtra("userMessage", userMessage);
                                     startActivity(intent);
+                                    finish();
                                 }
                         }
 
@@ -122,7 +123,6 @@ public class LoginActivity extends Activity implements View.OnClickListener{
     private void provessData(String json) {
         if(!TextUtils.isEmpty(json)){
              userMessage = new Gson().fromJson(json,UserMessage.class);
-
         }
     }
 

@@ -8,10 +8,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.first.myapplication.R;
+import com.google.gson.Gson;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import bean.UserMessage;
+import okhttp3.Call;
 
 /**
  * Created by 小黑 on 2019/8/2.
@@ -47,8 +53,14 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
         province = radiButtonOf(rd_prvince.getCheckedRadioButtonId());
         if (!"".equals(account) && !"".equals(password) && !"".equals(username)) {
             if (password.equals(rePassword) && password.length() >= 8) {
-                userMessage = new UserMessage(account,password,province,username);//当注册要求满足时对数据进行封装
-                                                                                    //联网请求，将数据发送到服务器上
+                userMessage = new UserMessage(0,account,password,province,username);//当注册要求满足时对数据进行封装
+                  String json = new Gson().toJson(userMessage);//联网请求，将数据发送到服务器上
+                  initHttp(json);
+                    Toast.makeText(this,"注册成功",Toast.LENGTH_SHORT).show();
+                    ed_account.setText("");
+                    ed_password.setText("");
+                    ed_rePassword.setText("");
+                    ed_username.setText("");
             } else if(password.length()<8){
                 messageOfDialog("密码格式错误");//根据不同情况显示对话框
             } else if(!password.equals(rePassword)){
@@ -56,7 +68,31 @@ public class RegisterActivity extends Activity implements View.OnClickListener {
             }
         }
     }
-//显示对话框的逻辑方法
+
+    private void initHttp(String json) {
+        String url = getResources().getString(R.string.httpUrl);
+        OkHttpUtils
+                .post()
+                .url(url)
+                .addParams("json", json)
+                .addParams("choose","register")
+                .build()
+                .execute(new StringCallback(){
+
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+
+                    }
+
+                });
+    }
+
+    //显示对话框的逻辑方法
     private void messageOfDialog(String messsage){
         final AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
         builder.setTitle("提示");
